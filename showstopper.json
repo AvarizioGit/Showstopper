@@ -1,0 +1,17 @@
+{
+  "id": "showstopper",
+  "name": "Showstopper",
+  "author": [
+    "Avarizio"
+  ],
+  "description": "A Vanilla+ mod that adds a few Jokers, Vouchers, and Decks!",
+  "prefix": "swp",
+  "main_file": "main.lua",
+  "version": "1.0.0",
+  "priority": 0,
+  "badge_colour": "a4133c",
+  "badge_text_colour": "FFFFFF",
+  "dependencies": [
+    "Steamodded (>=1.0.0~BETA-1814a)"
+  ]
+}
