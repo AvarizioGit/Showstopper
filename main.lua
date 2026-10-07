@@ -85,6 +85,12 @@ if true then
     assert(SMODS.load_file("jokers/3charlieinferno.lua"))()
     assert(SMODS.load_file("jokers/3virtuoso.lua"))()
     assert(SMODS.load_file("jokers/3voucherclearance.lua"))()
+    assert(SMODS.load_file("jokers/3youareanidiot.lua"))()
+    assert(SMODS.load_file("jokers/2premiumcard.lua"))()
+    assert(SMODS.load_file("jokers/2vanadinite.lua"))()
+    assert(SMODS.load_file("jokers/3bismuth.lua"))()
+    assert(SMODS.load_file("jokers/3quartz.lua"))()
+    assert(SMODS.load_file("jokers/3civilighteterna.lua"))()
 end
 -- load the vouchers
 if true then
@@ -124,19 +130,10 @@ SMODS.ObjectType({
     key = "swp_swp_jokers",
     cards = {
         ["j_swp_1bookmove"] = true,
-        ["j_swp_1poweredup"] = true,
-        ["j_swp_1smotheredmate"] = true,
-        ["j_swp_2seedpacket"] = true,
-        ["j_swp_3phoenixpackage"] = true,
-        ["j_swp_3studentcard"] = true
-    },
-})
-
-SMODS.ObjectType({
-    key = "swp_nx_jokers",
-    cards = {
         ["j_swp_1disintegratedjoker"] = true,
         ["j_swp_1patternrecognition"] = true,
+        ["j_swp_1poweredup"] = true,
+        ["j_swp_1smotheredmate"] = true,
         ["j_swp_1supplycache"] = true,
         ["j_swp_2allrounder"] = true,
         ["j_swp_2boosterclearance"] = true,
@@ -145,6 +142,7 @@ SMODS.ObjectType({
         ["j_swp_2earlyclosing"] = true,
         ["j_swp_2roadrepairs"] = true,
         ["j_swp_2screamingjimbo"] = true,
+        ["j_swp_2seedpacket"] = true,
         ["j_swp_2triplet"] = true,
         ["j_swp_2twinmoons"] = true,
         ["j_swp_3bluescreen"] = true,
@@ -153,12 +151,20 @@ SMODS.ObjectType({
         ["j_swp_3lotterycard"] = true,
         ["j_swp_3membership"] = true,
         ["j_swp_3onemorecard"] = true,
+        ["j_swp_3phoenixpackage"] = true,
         ["j_swp_3social"] = true,
+        ["j_swp_3studentcard"] = true,
         ["j_swp_3survey"] = true,
         ["j_swp_3teslacoil"] = true,
         ["j_swp_3charlieinferno"] = true,
         ["j_swp_3virtuoso"] = true,
-        ["j_swp_3voucherclearance"] = true
+        ["j_swp_3voucherclearance"] = true,
+        ["j_swp_3youareanidiot"] = true,
+        ["j_swp_2premiumcard"] = true,
+        ["j_swp_2vanadinite"] = true,
+        ["j_swp_3bismuth"] = true,
+        ["j_swp_3quartz"] = true,
+        ["j_swp_3civilighteterna"] = true
     },
 })
 
