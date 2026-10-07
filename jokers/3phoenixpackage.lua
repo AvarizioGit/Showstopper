@@ -48,13 +48,6 @@ SMODS.Joker{ --Phoenix Package
                         end
                     end
                 }))
-                G.E_MANAGER:add_event(Event({
-                    func = function()
-                        play_sound("nx_paketphoenix")
-                        
-                        return true
-                    end,
-                }))
                 return {
                     message = "Win!"
                 }
