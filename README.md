@@ -10,9 +10,9 @@ Showstopper is a somewhat vanilla+ mod made for pouring my ideas and art for a m
 * 30 Jokers
 * 3 Decks
 * 8 Vouchers
-* 
-* Crossmods:
+  
+# Crossmods:
 * 3 Sleeves
 * 6 Partners
-* 
-* And more upcoming...
+
+And more upcoming...
