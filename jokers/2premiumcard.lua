@@ -4,8 +4,7 @@ SMODS.Joker{ --Premium Card
     config = {
         extra = {
             rental_earn = -1,
-            numerator = 1,
-            denominator = 3
+            odds = 3
         }
     },
     loc_txt = {
@@ -39,14 +38,19 @@ SMODS.Joker{ --Premium Card
     pools = { ["swp_swp_jokers"] = true },
     
     loc_vars = function(self, info_queue, card)
-        local numerator, denominator = swp_uti.chance_vars(card, nil, card.ability.extra.numerator, card.ability.extra.denominator)
-        return {vars = {card.ability.extra.rental_earn, card.ability.extra.numerator, card.ability.extra.denominator}}
+        local numerator, denominator = swp_uti.chance_vars(card)
+        return {vars = {
+            card.ability.extra.rental_earn, 
+            numerator, 
+            denominator
+        }
+    }
     end,
 
     calculate = function(self, card, context) 
         if not context.blueprint and (context.reroll_shop or context.starting_shop) then
             for k, v in pairs(G.shop_jokers.cards) do
-                if swp_uti.chance(card, 'j_swp_2premiumcard', card.ability.extra.numerator, card.ability.extra.denominator) then
+                if swp_uti.chance(card, 'j_swp_2premiumcard') then
                     v:set_rental(true)
                     v:juice_up(0.3, 0.5)
                     card:juice_up()
@@ -67,13 +71,20 @@ SMODS.Joker{ --Premium Card
         card:set_rental(true)
     end,
 
-    --[[
     SMODS.Sticker:take_ownership('rental', {
-        loc_txt = {
-            name = "Rental",
-            text = {
-                "Earns {C:money}$3{} at end of round"
+        loc_vars = function(self, info_queue, card)
+            if next(SMODS.find_card("j_swp_2premiumcard")) then
+                return {
+                    key = 'rental_custom',
+                    vars = { -(G.GAME and G.GAME.rental_rate or -3) }
+                }
+                
+            end
+            
+            return {
+                key = 'rental',
+                vars = { G.GAME and G.GAME.rental_rate or 3 }
             }
-        }
-    }, true)]]
+        end
+    }, true)
 }
