@@ -244,5 +244,14 @@ return {
                 }
             },
         },
+        Other = {
+            rental_custom = {
+                name = "Rental",
+                text = {
+                    "Earns {C:money}$3{} at",
+                    "end of round",
+                }   
+            }
+        }
     }
 }
