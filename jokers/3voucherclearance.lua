@@ -88,7 +88,7 @@ local card_set_cost_ref = Card.set_cost
 function Card:set_cost()
     card_set_cost_ref(self)
     
-    if next(SMODS.find_card("j_nx_3voucherclearance")) then
+    if next(SMODS.find_card("j_swp_3voucherclearance")) then
         if self.ability.set == 'Voucher' then
             self.cost = math.max(0, math.floor(self.cost * (1 - (50) / 100)))
         end

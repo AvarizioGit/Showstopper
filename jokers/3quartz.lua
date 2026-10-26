@@ -31,6 +31,7 @@ SMODS.Joker{ --Quartz
     unlocked = true,
     discovered = true,
     atlas = 'Jokers',
+    enhancement_gate = 'm_glass',
     pools = { ["swp_swp_jokers"] = true },
 
     loc_vars = function(self, info_queue, card)

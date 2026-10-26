@@ -23,6 +23,10 @@ SMODS.Joker{ --Bluescreen
         x = 5,
         y = 13
     },
+    soul_pos = {
+        x = 6,
+        y = 13
+    },
     display_size = {
         w = 71 * 1, 
         h = 95 * 1

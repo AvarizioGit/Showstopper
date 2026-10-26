@@ -32,13 +32,14 @@ SMODS.Joker{ --Tesla Coil
     attributes = {'enhancements'},
     atlas = 'Jokers',
     pools = { ["nx_nx_jokers"] = true },
+    enhancement_gate = 'm_steel',
 
     loc_vars = function(self, info_queue, card)
         return {vars = {localize({set = 'Enhanced', key = card.ability.extra.enhancement, type = 'name_text'})}}
     end,
 
     calculate = function(self, card, context)
-        if context.cardarea == G.hand and not context.end_of_round then
+        if context.individual and context.cardarea == G.hand and not context.end_of_round then
             local card = context.other_card
 
             for i, v in ipairs(G.hand.cards) do

@@ -33,7 +33,7 @@ SMODS.Joker{ --Club Card
     unlocked = true,
     discovered = true,
     atlas = 'Jokers',
-    pools = { ["nx_nx_jokers"] = true },
+    pools = { ["swp_swp_jokers"] = true },
 
     loc_vars = function(self, info_queue, card)
         
@@ -50,7 +50,7 @@ SMODS.Joker{ --Club Card
                     G.GAME.hands[hand].chips = G.GAME.hands[hand].chips + card.ability.extra.chipvar
                 end
 
-                card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "+"..tostring(5), colour = G.C.CHIPS})
+                card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "+"..tostring(card.ability.extra.chipvar), colour = G.C.CHIPS})
             end
         end
     end

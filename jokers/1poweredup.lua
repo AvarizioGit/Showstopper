@@ -2,8 +2,7 @@
 SMODS.Joker{ --Powered Up
     key = "1poweredup",
     config = {
-        extra = {
-        }
+        extra = { mult = 8, bonus = 60 }
     },
     loc_txt = {
         ['name'] = 'Powered Up',
@@ -32,21 +31,44 @@ SMODS.Joker{ --Powered Up
     unlocked = true,
     discovered = true,
     atlas = 'Jokers',
-    pools = { ["nx_nx_jokers"] = true },
+    pools = { ["swp_swp_jokers"] = true },
+
+    loc_vars = function(self, info_queue, card)
+        return {vars = { card.ability.extra.mult, card.ability.extra.bonus}}
+    end,
 
     add_to_deck = function(self, card)
-        G.P_CENTERS.m_mult.config.mult =
-            G.P_CENTERS.m_mult.config.mult + 4
-
-        G.P_CENTERS.m_bonus.config.bonus =
-            G.P_CENTERS.m_bonus.config.bonus + 30
+        for _, _card in ipairs(G.playing_cards) do
+            if SMODS.has_enhancement(_card, 'm_mult') then
+                _card.ability.mult = card.ability.extra.mult
+            end
+        end
+        for _, _card in ipairs(G.playing_cards) do
+            if SMODS.has_enhancement(_card, 'm_bonus') then
+                _card.ability.bonus = card.ability.extra.bonus
+            end
+        end
     end,
 
     remove_from_deck = function(self, card)
-        G.P_CENTERS.m_mult.config.mult =
-            G.P_CENTERS.m_mult.config.mult - 4
-
-        G.P_CENTERS.m_bonus.config.bonus =
-            G.P_CENTERS.m_bonus.config.bonus - 30
+        for _, _card in ipairs(G.playing_cards) do
+            if SMODS.has_enhancement(_card, 'm_mult') then
+                _card.ability.mult = G.P_CENTERS.m_mult.config.mult
+            end
+        end
+        for _, _card in ipairs(G.playing_cards) do
+            if SMODS.has_enhancement(_card, 'm_bonus') then
+                _card.ability.bonus = G.P_CENTERS.m_bonus.config.bonus
+            end
+        end
     end,
+
+    calculate = function(self, card, context)
+        if context.setting_ability and context.new == 'm_mult' then
+            context.other_card.ability.mult = card.ability.extra.mult
+        end
+        if context.setting_ability and context.new == 'm_bonus' then
+            context.other_card.ability.bonus = card.ability.extra.bonus
+        end
+    end
 }

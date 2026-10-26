@@ -40,6 +40,18 @@ SMODS.Joker{ --Bismuth
             }
         }
     end,
+
+    --[[
+    in_pool = function(self, args)
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if playing_card.edition and playing_card.edition.polychrome then
+                return true
+            end
+        end
+
+        return false
+    end,]]
+
     calculate = function(self, card, context)
         if context.initial_scoring_step then
             local has_polychrome = false

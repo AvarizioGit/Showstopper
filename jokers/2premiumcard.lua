@@ -60,11 +60,25 @@ SMODS.Joker{ --Premium Card
     end,
     
     add_to_deck = function(self, card, from_debuff)
-      G.GAME.rental_rate = math.max(G.GAME.rental_rate * card.ability.extra.rental_earn)
+        if not from_debuff then
+            G.GAME.swp_premium_count = (G.GAME.swp_premium_count or 0) + 1
+            G.GAME.rental_rate = -math.abs(G.GAME.rental_rate or 3)
+        end
     end,
 
     remove_from_deck = function(self, card, from_debuff)
-      G.GAME.rental_rate = math.max(G.GAME.rental_rate / card.ability.extra.rental_earn)
+        if not from_debuff then
+            G.GAME.swp_premium_count = math.max(
+                0,
+                (G.GAME.swp_premium_count or 1) - 1
+           )
+
+            if G.GAME.swp_premium_count == 0 then
+                G.GAME.rental_rate = math.abs(G.GAME.rental_rate or 3)
+            else
+                G.GAME.rental_rate = -math.abs(G.GAME.rental_rate or 3)
+            end
+        end
     end,
 
     set_ability = function(self, card, initial)

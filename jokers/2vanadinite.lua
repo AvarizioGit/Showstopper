@@ -33,12 +33,16 @@ SMODS.Joker{ --Vanadinite
     discovered = true,
     atlas = 'Jokers',
     pools = { ["swp_swp_jokers"] = true },
+
+    loc_vars = function(self, info_queue, card)
+        return {vars = {card.ability.extra.retrigger}}
+    end,
     
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.play  then
             if context.other_card.seal == "Red" then
                 return {
-                    repetitions = 1,
+                    repetitions = card.ability.extra.retrigger,
                     message = localize('k_again_ex')
                 }
             end
