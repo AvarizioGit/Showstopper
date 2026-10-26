@@ -7,7 +7,7 @@ Showstopper is a somewhat vanilla+ mod made for pouring my ideas and art for a m
 <img width="1017" height="985" alt="image" src="https://github.com/user-attachments/assets/10e47936-be11-47cb-925d-8d9ef706dba5" />
 
 # Current addition as of 1.0.0
-* 30 Jokers
+* 43 Jokers
 * 3 Decks
 * 8 Vouchers
   
