@@ -1,4 +1,12 @@
 SMODS.Atlas({
+    key = "Tags", 
+    path = "Tags.png", 
+    px = 34,
+    py = 34, 
+    atlas_table = "ASSET_ATLAS"
+})
+
+SMODS.Atlas({
     key = "modicon", 
     path = "ModIcon.png", 
     px = 34,
@@ -91,6 +99,13 @@ if true then
     assert(SMODS.load_file("jokers/3bismuth.lua"))()
     assert(SMODS.load_file("jokers/3quartz.lua"))()
     assert(SMODS.load_file("jokers/3civilighteterna.lua"))()
+    assert(SMODS.load_file("jokers/3blairjoke.lua"))()
+    assert(SMODS.load_file("jokers/3redsealsteelking.lua"))()
+    assert(SMODS.load_file("jokers/2verniercaliper.lua"))()
+    assert(SMODS.load_file("jokers/2jokercrossing.lua"))()
+    assert(SMODS.load_file("jokers/2clockworkconrad.lua"))()
+    assert(SMODS.load_file("jokers/3throbber.lua"))()
+    assert(SMODS.load_file("jokers/3pfd.lua"))()
 end
 -- load the vouchers
 if true then
@@ -164,7 +179,14 @@ SMODS.ObjectType({
         ["j_swp_2vanadinite"] = true,
         ["j_swp_3bismuth"] = true,
         ["j_swp_3quartz"] = true,
-        ["j_swp_3civilighteterna"] = true
+        ["j_swp_3civilighteterna"] = true,
+        ["j_swp_3blairjoke"] = true,
+        ["j_swp_3redsealsteelking"] = true,
+        ["j_swp_2verniercaliper"] = true,
+        ["j_swp_2jokercrossing"] = true,
+        ["j_swp_2clockworkconrad"] = true,
+        ["j_swp_3throbber"] = true,
+        ["j_swp_3pfd"] = true
     },
 })
 
@@ -176,11 +198,25 @@ SMODS.current_mod.optional_features = function()
     }
 end
 
+if true then
+    assert(SMODS.load_file("tags/finale.lua"))()
+    assert(SMODS.load_file("tags/encore.lua"))()
+end
+
 swp_uti = {}
+
+G.C.swp_showstopper = HEX("A4133C")
+G.C.sblind = HEX("3A55AB")
+G.C.bblind = HEX("E0A23A")
+
+loc_colour()
+G.ARGS.LOC_COLOURS.showstopper = G.C.swp_showstopper
+G.ARGS.LOC_COLOURS.sblind = G.C.sblind
+G.ARGS.LOC_COLOURS.bblind = G.C.bblind
 
 SMODS.current_mod.menu_cards = function()
 	return {
-		{key = 'j_swp_2clubcard'},
+		{key = 'j_swp_2triplet'},
 	}
 end
 
