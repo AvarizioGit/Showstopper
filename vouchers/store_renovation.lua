@@ -23,7 +23,7 @@ SMODS.Voucher {
     discovered = true,
     no_collection = false,
     can_repeat_soul = false,
-    requires = {'v_nx_shelf_extension'},
+    requires = {'v_swp_shelf_extension'},
     atlas = 'Vouchers',
     redeem = function(self, card)
         return {

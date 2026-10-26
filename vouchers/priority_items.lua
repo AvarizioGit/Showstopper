@@ -23,7 +23,7 @@ SMODS.Voucher {
     discovered = true,
     no_collection = false,
     can_repeat_soul = false,
-    requires = {'v_nx_quality_goods'},
+    requires = {'v_swp_quality_goods'},
     atlas = 'Vouchers',
     redeem = function(self, card)
         return {

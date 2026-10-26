@@ -16,7 +16,7 @@ SMODS.Voucher {
     discovered = true,
     no_collection = false,
     can_repeat_soul = false,
-    requires = {'v_nx_bigger_boosters'},
+    requires = {'v_swp_bigger_boosters'},
     atlas = 'Vouchers',
     redeem = function(self, card)
         return {

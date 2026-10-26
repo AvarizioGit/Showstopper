@@ -23,7 +23,7 @@ SMODS.Voucher {
     discovered = true,
     no_collection = false,
     can_repeat_soul = false,
-    requires = {'v_nx_powered_cards'},
+    requires = {'v_swp_powered_cards'},
     atlas = 'Vouchers',
     calculate = function(self,card,context)
         if context.individual and context.cardarea == G.play then
