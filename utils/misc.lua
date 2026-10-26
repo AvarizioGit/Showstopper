@@ -98,7 +98,7 @@ end
 ---@param seed string|number
 ---@param base_numerator number|nil -- If skipped, defaults to 1
 ---@param base_denominator number|nil -- If skipped, tries to access `obj.ability.extra.odds`
----@param identifier string|nil -- If skipped, sets to `"paperback_" .. seed`
+---@param identifier string|nil -- If skipped, sets to `"swp_" .. seed`
 ---@return boolean
 function swp_uti.chance(obj, seed, base_numerator, base_denominator, identifier)
   return SMODS.pseudorandom_probability(
@@ -118,8 +118,8 @@ end
 ---@return number numerator
 ---@return number denominator
 function swp_uti.chance_vars(obj, identifier, base_numerator, base_denominator)
-  -- todo: many calls to PB_UTIL.chance_vars don't use the same identifier
-  -- as the corresponding PB_UTIL.chance
+  -- todo: many calls to swp_uti.chance_vars don't use the same identifier
+  -- as the corresponding swp_uti.chance
   -- (this doesn't matter much, we don't use identifiers)
   return SMODS.get_probability_vars(
     obj,
