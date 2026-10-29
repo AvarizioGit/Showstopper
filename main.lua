@@ -1,3 +1,4 @@
+
 SMODS.Atlas({
     key = "Tags", 
     path = "Tags.png", 
@@ -106,6 +107,8 @@ if true then
     assert(SMODS.load_file("jokers/2clockworkconrad.lua"))()
     assert(SMODS.load_file("jokers/3throbber.lua"))()
     assert(SMODS.load_file("jokers/3pfd.lua"))()
+    assert(SMODS.load_file("jokers/1deathsheet.lua"))()
+    assert(SMODS.load_file("jokers/2hardhat.lua"))()
 end
 -- load the vouchers
 if true then
@@ -186,7 +189,9 @@ SMODS.ObjectType({
         ["j_swp_2jokercrossing"] = true,
         ["j_swp_2clockworkconrad"] = true,
         ["j_swp_3throbber"] = true,
-        ["j_swp_3pfd"] = true
+        ["j_swp_3pfd"] = true,
+        ["j_swp_1deathsheet"] = true,
+        ["j_swp_2hardhat"] = true
     },
 })
 
